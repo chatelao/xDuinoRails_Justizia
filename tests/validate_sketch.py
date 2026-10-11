@@ -20,6 +20,10 @@ def validate_sketch(filepath):
         "PIN_DCC0_LOW": "4",
         "PIN_DCC1_HIGH": "6",
         "PIN_DCC1_LOW": "8",
+        "PIN_VIN": "10",
+        "PIN_VM": "11",
+        "PIN_U_PLUS": "12",
+        "PIN_3V3": "13",
     }
 
     for pin_name, pin_val in expected_pins.items():

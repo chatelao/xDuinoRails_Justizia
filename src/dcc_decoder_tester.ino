@@ -11,6 +11,10 @@
  *   Pin 19 / D4    : DCC0.LOW     (Digital output: H-Bridge Rail 0 Low-side)
  *   Pin 21 / D6    : DCC1.HIGH    (Digital output: H-Bridge Rail 1 High-side)
  *   Pin 23 / D8    : DCC1.LOW     (Digital output: H-Bridge Rail 1 Low-side)
+ *   Pin 25 / D10   : VIN          (VIN signal - 7.2V)
+ *   Pin 26 / D11   : VM           (VM signal - 15V)
+ *   Pin 27 / D12   : U+           (Decoder common positive U+)
+ *   Pin 28 / D13   : +3v3         (Logic power line +3V3)
  * ============================================================================
  */
 
@@ -29,6 +33,11 @@ const uint8_t PIN_DCC0_HIGH   = 2;  // Pin 17 - DCC Rail 0 High Side (D2)
 const uint8_t PIN_DCC0_LOW    = 4;  // Pin 19 - DCC Rail 0 Low Side  (D4)
 const uint8_t PIN_DCC1_HIGH   = 6;  // Pin 21 - DCC Rail 1 High Side (D6)
 const uint8_t PIN_DCC1_LOW    = 8;  // Pin 23 - DCC Rail 1 Low Side  (D8)
+
+const uint8_t PIN_VIN         = 10; // Pin 25 - VIN signal (7.2V)
+const uint8_t PIN_VM          = 11; // Pin 26 - VM signal (15V)
+const uint8_t PIN_U_PLUS      = 12; // Pin 27 - U+ signal
+const uint8_t PIN_3V3         = 13; // Pin 28 - +3v3 signal
 
 // ----------------------------------------------------------------------------
 // NMRA DCC Constants & Timing Specifications
@@ -337,6 +346,12 @@ void setup() {
   pinMode(PIN_MOTOR1_DIV,  INPUT);
   pinMode(PIN_FUNC1_DIV,   INPUT);
   pinMode(PIN_DEF_FAULT_A, INPUT_PULLUP); // Active LOW hardware fault input
+
+  // Configure Power & Voltage Monitoring / Output Pins
+  pinMode(PIN_VIN,    INPUT);
+  pinMode(PIN_VM,     INPUT);
+  pinMode(PIN_U_PLUS, INPUT);
+  pinMode(PIN_3V3,    INPUT);
 
   // Set default DCC packet
   currentPacket = idlePacket;

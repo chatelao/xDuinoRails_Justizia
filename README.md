@@ -23,6 +23,10 @@ The Arduino pin assignment for the tester rig is defined as follows:
 | **19** | **D4** | `DCC0.LOW` | Output (Digital) | Low-side gate control signal for DCC Output Rail 0 H-Bridge driver. |
 | **21** | **D6** | `DCC1.HIGH` | Output (Digital) | High-side gate control signal for DCC Output Rail 1 H-Bridge driver. |
 | **23** | **D8** | `DCC1.LOW` | Output (Digital) | Low-side gate control signal for DCC Output Rail 1 H-Bridge driver. |
+| **25** | **D10** | `VIN` | Output / Sense | Board supply voltage sensing / monitoring (7.2V). |
+| **26** | **D11** | `VM` | Output / Sense | Motor voltage supply sensing / monitoring (15V). |
+| **27** | **D12** | `U+` | Output / Sense | Decoder common positive voltage line (U+). |
+| **28** | **D13** | `+3v3` | Output / Sense | 3.3V logic supply rail line (+3V3). |
 
 ---
 
